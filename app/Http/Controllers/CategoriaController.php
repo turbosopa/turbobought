@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\categoria;
+use App\Models\producte;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,19 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Categoria::all();
+        $productes = Producte::all();
+
+        return View('home',compact(['categories','productes']));
+    }
+    public function indexcat(Request $request, Categoria $categoria)
+    {
+
+        $productes = Producte::where('categoria_id', $categoria->id)->get();
+
+        $categories = Categoria::all();
+
+        return view('home', compact('categories', 'productes'));
     }
 
     /**

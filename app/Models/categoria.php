@@ -12,4 +12,9 @@ class categoria extends Model
     {
         return $this->hasMany(Producte::class);
     }
+    
+    public function getRouteKeyName()
+    {
+        return 'nom';
+    }
 }
