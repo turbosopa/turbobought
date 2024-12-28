@@ -11,7 +11,9 @@ Route::get('/dashboard', function () {
 
 
 Route::get('/', [CategoriaController::class, 'index'])->name('home');
-Route::get('/{categoria}', [CategoriaController::class, 'indexcat'])->name('homecat');
+Route::get('/ctg/{categoria}', [CategoriaController::class, 'indexcat'])->name('homecat');
+
+Route::get('/pdt/{producte}', [ProducteController::class, 'index'])->name('producte');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

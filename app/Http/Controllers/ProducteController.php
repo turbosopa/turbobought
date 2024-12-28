@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\producte;
+use App\Models\categoria;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -11,9 +12,10 @@ class ProducteController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Producte $producte)
     {
-        //
+        $categoria = Categoria::where('id', $producte->categoria_id)->get();
+        return view('producte',compact(['categoria','producte']));
     }
 
     /**

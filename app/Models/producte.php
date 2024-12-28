@@ -17,4 +17,9 @@ class producte extends Model
     {
         return $this->belongsToMany(Comanda::class, 'comanda_producte');
     }
+    
+    public function getRouteKeyName()
+    {
+        return 'nom';
+    }
 }

@@ -5,9 +5,6 @@
                 {{ __('Totes les categories') }}
             </a>
             <!-- Categories dinàmiques -->
-            @php
-                $categories
-            @endphp
             @if (isset($categories))
             
             @foreach ($categories as $categoria)
@@ -32,7 +29,10 @@
                             <div class="border border-gray-300 p-4 text-center">
                                 <!-- Nom del producte -->
                                 <div class="mb-2 font-semibold text-gray-800">
-                                    {{ $producte->nom }}
+                                    <a href="{{ route('producte', ['producte' => $producte]) }}" 
+                                        class="text-gray-900 hover:underline">
+                                        {{ $producte->nom }}
+                                     </a>
                                 </div>
                                 <!-- Imatge -->
                                 <div class="flex items-center justify-center h-32 border-2 border-gray-400 rounded">
@@ -46,5 +46,3 @@
         </div>
         
 </x-guest-layout>
-
-<x-footer></x-footer>

@@ -39,12 +39,14 @@ class DatabaseSeeder extends Seeder
         DB::table('categoria')->insert(['nom'=>"Tecnologia"]);
         DB::table('categoria')->insert(['nom'=>"Casa",'descripcio'=>"Són productes de casa"]);
 
-        DB::table('producte')->insert(['nom'=>"Poma",'preu'=>2,'quantitat'=>10,'categoria_id'=>1]);
-        DB::table('producte')->insert(['nom'=>"Telefon",'preu'=>69,'quantitat'=>34,'categoria_id'=>2]);
-        DB::table('producte')->insert(['nom'=>"Taula",'preu'=>40,'quantitat'=>2,'categoria_id'=>3]);
-        DB::table('producte')->insert(['nom'=>"Pera",'preu'=>3,'quantitat'=>87,'categoria_id'=>1]);
-        DB::table('producte')->insert(['nom'=>"Portatil",'preu'=>169,'quantitat'=>4,'categoria_id'=>2]);
-        DB::table('producte')->insert(['nom'=>"Cadira",'preu'=>2,'quantitat'=>7,'categoria_id'=>3]);
+        DB::table('producte')->insert(['nom'=>"Poma",'descripcio'=>"Una poma fresca, sucosa i perfecta per a un snack saludable. Ideal per portar a tot arreu o per complementar els teus àpats amb un toc de dolçor natural.",'preu'=>2,'quantitat'=>10,'categoria_id'=>1]);
+        DB::table('producte')->insert(['nom'=>"Telefon",'descripcio'=>"Telèfon intel·ligent amb un disseny modern i funcionalitats avançades. Perfecte per mantenir-te connectat i gestionar les teves activitats diàries amb facilitat.
+
+",'preu'=>69,'quantitat'=>34,'categoria_id'=>2]);
+        DB::table('producte')->insert(['nom'=>"Taula",'descripcio'=>"Taula robusta i elegant, ideal per a qualsevol espai. Fabricada amb materials d’alta qualitat, combina estil i durabilitat per a la teva llar o oficina.",'preu'=>40,'quantitat'=>2,'categoria_id'=>3]);
+        DB::table('producte')->insert(['nom'=>"Pera",'descripcio'=>"Pera madura amb una textura suau i un gust dolç irresistible. Perfecta per consumir sola, en postres o per preparar sucs i batuts naturals.",'preu'=>3,'quantitat'=>87,'categoria_id'=>1]);
+        DB::table('producte')->insert(['nom'=>"Portatil",'descripcio'=>"Ordinador portàtil lleuger i potent, equipat amb la tecnologia més avançada per a treballar, estudiar o gaudir del teu contingut preferit des de qualsevol lloc.",'preu'=>169,'quantitat'=>4,'categoria_id'=>2]);
+        DB::table('producte')->insert(['nom'=>"Cadira",'descripcio'=>"Cadira ergonòmica amb un disseny còmode i funcional. Ideal per a llargues hores d’ús, ja sigui treballant, estudiant o relaxant-te.",'preu'=>2,'quantitat'=>7,'categoria_id'=>3]);
 
         DB::table('comanda')->insert(['data'=>now(),'estat'=>true,'usuari_id'=>1]);
         DB::table('comanda')->insert(['data'=>now(),'estat'=>false,'usuari_id'=>3]);
