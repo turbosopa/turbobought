@@ -26,8 +26,9 @@
                     </a>
                     
                     <div class="flex space-x-4">
-                        <a href="{{ route('home') }}" class="hover:text-gray-400">Home</a>
-                        <a href="{{ route('dashboard') }}" class="hover:text-gray-400">Dashboard</a>
+                        <a href="{{ route('dashboard') }}" class="hover:text-gray-400">
+                            {{__('Login/Register')}}
+                        </a>
                     </div>
                 </div>
             </div>

@@ -3,16 +3,16 @@
       <div class="section pl-8">
           <h4 class="text-lg font-semibold mb-4">{{__('Atenció al client')}}</h4>
           <ul class="space-y-2">
-              <li><a href="#" class="hover:underline">{{__('Atenció al client')}}</a></li>
-              <li><a href="#" class="hover:underline">{{__('Termes y condicions')}}</a></li>
+              <li><a class="hover:underline">{{__('Atenció al client')}}</a></li>
+              <li><a class="hover:underline">{{__('Termes y condicions')}}</a></li>
           </ul>
       </div>
 
       <div class="section">
           <h4 class="text-lg font-semibold mb-4">{{__('Guía de compra')}}</h4>
           <ul class="space-y-2">
-              <li><a href="#" class="hover:underline">{{__('Crear una conta')}}</a></li>
-              <li><a href="#" class="hover:underline">{{__('Pagaments')}}</a></li>
+              <li><a href="{{ route('dashboard') }}" class="hover:underline">{{__('Crear una conta')}}</a></li>
+              <li><a class="hover:underline">{{__('Pagaments')}}</a></li>
           </ul>
       </div>
 

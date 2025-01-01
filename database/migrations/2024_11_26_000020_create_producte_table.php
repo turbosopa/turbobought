@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('nom');
             $table->string('descripcio')->nullable();
+            $table->string('imatge')->nullable();
             $table->integer('preu');
-            $table->integer('quantitat');
             $table->foreignId('categoria_id')->constrained(table:'categoria')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();

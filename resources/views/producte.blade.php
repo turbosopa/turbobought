@@ -1,26 +1,36 @@
 <x-guest-layout>
     <!-- Producte Individual -->
     @if (isset($producte))
-        <div class="max-w-4xl mx-auto mt-10">
+        <div class="max-w-4xl mx-auto mt-20 mb-20">
             <!-- Contenidor del producte -->
             <div class="flex bg-white border border-gray-300 rounded-lg p-6">
                 <!-- Imatge -->
-                <div class="flex-grow flex items-center justify-center">
-                    <div class="h-64 w-full flex items-center justify-center border-2 border-gray-400 rounded">
-                        <span class="text-gray-500">IMATGE</span>
-                    </div>
+                <div class="flex w-1/2 items-center justify-center">
+                    <img src="{{ $producte->imatge }}" alt="{{ $producte->nom }}" class="h-64 w-full object-contain border-2 border-gray-400 rounded">
                 </div>
 
                 <!-- Detalls del producte -->
-                <div class="ml-6 flex flex-col justify-between items-end w-1/4">
+                <div class="w-1/2 pl-6 flex flex-col">
                     <!-- Preu -->
-                    <div class="text-3xl font-bold text-gray-900">
+                    <div class="text-3xl font-bold text-gray-800 mb-4">
                         {{ number_format($producte->preu, 2) }}€
                     </div>
-                    
+
+                    <!-- Nom -->
+                    <div class="text-4xl font-bold text-gray-900 mb-4">
+                        {{ $producte->nom }}
+                    </div>
+
                     <!-- Descripció -->
-                    <div class="mt-4 text-gray-700 text-right">
+                    <div class="text-gray-700 mb-6">
                         {{ $producte->descripcio }}
+                    </div>
+
+                    <!-- Botó "Afegir al carrito" -->
+                    <div class="flex justify-start">
+                        <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                            Afegir al carrito
+                        </button>
                     </div>
                 </div>
             </div>
