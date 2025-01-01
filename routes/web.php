@@ -4,6 +4,10 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProducteController;
 use App\Http\Controllers\CategoriaController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CarritoController;
+
+Route::post('/afegir-carro/{producte}', [CarritoController::class, 'afegir'])->name('afegir.carro');
+Route::post('/buidar-carro', [CarritoController::class, 'buidar'])->name('buidar.carro');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

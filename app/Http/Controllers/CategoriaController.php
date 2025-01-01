@@ -17,7 +17,9 @@ class CategoriaController extends Controller
         $categories = Categoria::all();
         $productes = Producte::all();
 
-        return View('home',compact(['categories','productes']));
+        $carro = session('carro', []);
+
+        return View('home',compact(['categories','productes','carro']));
     }
     public function indexcat(Request $request, Categoria $categoria)
     {
@@ -26,7 +28,9 @@ class CategoriaController extends Controller
 
         $categories = Categoria::all();
 
-        return view('home', compact('categories', 'productes'));
+        $carro = session('carro', []);
+
+        return view('home', compact('categories', 'productes','carro'));
     }
 
     /**
