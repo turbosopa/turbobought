@@ -19,16 +19,17 @@
             <!-- Navbar -->
             <nav class="bg-gray-800 text-white">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
-                    <!-- Logo -->
+                    <!-- Logo i enllaços junts -->
                     <div class="flex items-center space-x-8">
+                        <x-application-logo class="w-20 h-20" />
                         <a href="{{ url('/') }}" class="text-xl font-bold hover:text-gray-400">
-                            {{ config('app.name', 'Turbobought') }}
+                            {{ config('app.name', 'Laravel') }}
                         </a>
                         
-                        <!-- Enllaços junts -->
                         <div class="flex space-x-4">
-                            <a href="{{ route('home') }}" class="hover:text-gray-400">Home</a>
-                            <a href="{{ route('dashboard') }}" class="hover:text-gray-400">Dashboard</a>
+                            <a href="{{ route('dashboard') }}" class="hover:text-gray-400">
+                                {{__('Login')}}
+                            </a>
                         </div>
                     </div>
                 </div>

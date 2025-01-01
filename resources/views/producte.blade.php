@@ -28,9 +28,9 @@
 
                     <!-- Botó "Afegir al carrito" -->
                     <div class="flex justify-start">
-                        <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                        <a href="{{ route('home') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
                             Afegir al carrito
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
