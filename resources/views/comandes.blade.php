@@ -19,7 +19,7 @@
                         <td class="border border-gray-300 px-4 py-2 text-center">{{ $comanda->id }}</td>
                         <td class="border border-gray-300 px-4 py-2 text-center">{{ $comanda->data }}</td>
                         <td class="border border-gray-300 px-4 py-2 text-center">
-                            {{ number_format($comanda->preuTotal(), 2) }}€
+                            {{ $comanda->preutot }}€
                         </td>
                         <td class="border border-gray-300 px-4 py-2 text-center">
                             {{ $comanda->pagament->tipus}}

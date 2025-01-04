@@ -117,7 +117,6 @@
                 
                 @forelse ($carro as $item)
                     @php
-                        // Divideix la cadena en nom i preu
                         [$nom, $preu, $quan] = explode(':', $item);
                         $preutot+=$preu * $quan;
                     @endphp
