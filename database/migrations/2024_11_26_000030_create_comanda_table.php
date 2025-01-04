@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('comanda', function (Blueprint $table) {
             $table->id();
             $table->date('data');
-            $table->boolean('estat')->default(false);
             $table->foreignId('usuari_id')->constrained(table:'users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();

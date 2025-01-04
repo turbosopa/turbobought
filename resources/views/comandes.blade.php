@@ -1,43 +1,32 @@
 <x-app-layout>
-    <!-- Producte Individual -->
-    @if (isset($producte))
-        <div class="max-w-4xl mx-auto mt-20 mb-20">
-            <!-- Contenidor del producte -->
-            <div class="flex bg-white border border-gray-300 rounded-lg p-6">
-                <!-- Imatge -->
-                <div class="flex w-1/2 items-center justify-center">
-                    <img src="{{ $producte->imatge }}" alt="{{ $producte->nom }}" class="h-64 w-full object-contain border-2 border-gray-400 rounded">
-                </div>
+    <h1 class="text-2xl font-bold mb-6">{{ __('Les Meves Comandes') }}</h1>
 
-                <!-- Detalls del producte -->
-                <div class="w-1/2 pl-6 flex flex-col">
-                    <!-- Preu -->
-                    <div class="text-3xl font-bold text-gray-800 mb-4">
-                        {{ number_format($producte->preu, 2) }}€
-                    </div>
-
-                    <!-- Nom -->
-                    <div class="text-4xl font-bold text-gray-900 mb-4">
-                        {{ $producte->nom }}
-                    </div>
-
-                    <!-- Descripció -->
-                    <div class="text-gray-700 mb-6">
-                        {{ $producte->descripcio }}
-                    </div>
-
-                    <!-- Botó "Afegir al carro" -->
-                    <form method="POST" action="{{ route('afegir.carro', ['producte' => $producte]) }}">
-                        @csrf
-                        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-                            Afegir al carro
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
+    @if($comandes->isEmpty())
+        <p class="text-gray-500">{{ __('No tens cap comanda.') }}</p>
     @else
-        <!-- Si no hi ha cap producte -->
-        <p class="text-center text-gray-500 mt-10 py-10">{{ __('Aquest producte no existeix.') }}</p>
+        <table class="w-full border-collapse border border-gray-300">
+            <thead>
+                <tr>
+                    <th class="border border-gray-300 px-4 py-2">{{ __('ID') }}</th>
+                    <th class="border border-gray-300 px-4 py-2">{{ __('Data de la Comanda') }}</th>
+                    <th class="border border-gray-300 px-4 py-2">{{ __('Preu Total') }}</th>
+                    <th class="border border-gray-300 px-4 py-2">{{ __('Tipus de Pagament') }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($comandes as $comanda)
+                    <tr>
+                        <td class="border border-gray-300 px-4 py-2 text-center">{{ $comanda->id }}</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">{{ $comanda->data }}</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">
+                            {{ number_format($comanda->preuTotal(), 2) }}€
+                        </td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">
+                            {{ $comanda->pagament->tipus}}
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
     @endif
 </x-app-layout>

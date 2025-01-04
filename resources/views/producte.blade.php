@@ -31,7 +31,7 @@
                     <form method="POST" action="{{ route('afegir.carro', ['producte' => $producte]) }}">
                         @csrf
                         <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-                            Afegir al carro
+                            {{__('Afegir al carro')}}
                         </button>
                     </form>
                 </div>
@@ -77,7 +77,7 @@
                     <form method="POST" action="{{ route('afegir.carro', ['producte' => $producte]) }}">
                         @csrf
                         <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-                            Afegir al carro
+                            {{ __('Afegir al carro') }}
                         </button>
                     </form>
                 </div>

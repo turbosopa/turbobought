@@ -46,15 +46,15 @@ class DatabaseSeeder extends Seeder
         DB::table('producte')->insert(['nom'=>"Portatil",'descripcio'=>"Ordinador portàtil lleuger i potent, equipat amb la tecnologia més avançada per a treballar, estudiar o gaudir del teu contingut preferit des de qualsevol lloc.",'preu'=>169,'categoria_id'=>2,'imatge'=>"https://m.media-amazon.com/images/I/8104DpftbZL._AC_SL1500_.jpg"]);
         DB::table('producte')->insert(['nom'=>"Cadira",'descripcio'=>"Cadira ergonòmica amb un disseny còmode i funcional. Ideal per a llargues hores d’ús, ja sigui treballant, estudiant o relaxant-te.",'preu'=>2,'categoria_id'=>3,'imatge'=>"https://m.media-amazon.com/images/I/61fUzPuKHfL._AC_SL1500_.jpg"]);
 
-        DB::table('comanda')->insert(['data'=>now(),'estat'=>true,'usuari_id'=>1]);
-        DB::table('comanda')->insert(['data'=>now(),'estat'=>false,'usuari_id'=>3]);
+        DB::table('comanda')->insert(['data'=>now(),'usuari_id'=>1]);
+        DB::table('comanda')->insert(['data'=>now(),'usuari_id'=>3]);
         DB::table('comanda')->insert(['data'=>now(),'usuari_id'=>2]);
-        DB::table('comanda')->insert(['data'=>now(),'estat'=>true,'usuari_id'=>1]);
+        DB::table('comanda')->insert(['data'=>now(),'usuari_id'=>1]);
 
-        DB::table('pagament')->insert(['data'=>now(),'estat'=>true,'tipus'=>'bizum','comanda_id'=>1]);
-        DB::table('pagament')->insert(['data'=>now(),'estat'=>false,'tipus'=>'targeta','comanda_id'=>3]);
-        DB::table('pagament')->insert(['data'=>now(),'tipus'=>'bizum','comanda_id'=>2]);
-        DB::table('pagament')->insert(['data'=>now(),'estat'=>true,'tipus'=>'paypal','comanda_id'=>4]);
+        DB::table('pagament')->insert(['tipus'=>'bizum','comanda_id'=>1]);
+        DB::table('pagament')->insert(['tipus'=>'targeta','comanda_id'=>3]);
+        DB::table('pagament')->insert(['tipus'=>'bizum','comanda_id'=>2]);
+        DB::table('pagament')->insert(['tipus'=>'paypal','comanda_id'=>4]);
 
         DB::table('comanda_producte')->insert(['quantitat'=>30,'producte_id'=>5,'comanda_id'=>1]);
         DB::table('comanda_producte')->insert(['quantitat'=>29,'producte_id'=>6,'comanda_id'=>4]);

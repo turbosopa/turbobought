@@ -13,8 +13,6 @@ return new class extends Migration
     {
         Schema::create('pagament', function (Blueprint $table) {
             $table->id();
-            $table->date('data');
-            $table->boolean('estat')->default(false);
             $table->enum('tipus', ['bizum', 'targeta', 'paypal']);
             $table->foreignId('comanda_id')->constrained(table:'comanda')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamp('created_at')->useCurrent();

@@ -8,6 +8,11 @@ class categoria extends Model
 {
     protected $table ="categoria";
 
+    protected $fillable = [
+        'nom',
+        'descripcio',
+    ];
+
     public function producte()
     {
         return $this->hasMany(Producte::class);

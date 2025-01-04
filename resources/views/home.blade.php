@@ -101,6 +101,12 @@
                 </div>
             @endif
 
+            @if (session('error'))
+                <div class="bg-red-500 text-white p-4 mb-4">
+                    {{ session('error') }}
+                </div>
+            @endif
+
             <!-- Carro -->
             <h2 class="text-2xl font-bold my-4">Carro</h2>
             
@@ -112,26 +118,46 @@
                 @forelse ($carro as $item)
                     @php
                         // Divideix la cadena en nom i preu
-                        [$nom, $preu] = explode(':', $item);
-                        $preutot+=$preu;
+                        [$nom, $preu, $quan] = explode(':', $item);
+                        $preutot+=$preu * $quan;
                     @endphp
                     <li class="mb-2 flex">
-                        <p class="flex-1">{{ $nom }}  {{ number_format($preu, 2) }}€</p>
+                        <p class="flex-1">{{ $nom }} x{{ $quan }} {{ number_format($preu, 2) }}€</p>
                     </li>
                 @empty
-                    <p>No hi ha productes al carro.</p>
+                    <p>{{ __('No hi ha productes al carro.') }}</p>
                 @endforelse
             </ul>
 
             <!-- Botó per buidar el carro -->
             @if (!empty($carro))
-                    <p>Total  {{ number_format($preutot, 2) }}€</p>
+                <p>{{ __('Total') }} {{ number_format($preutot, 2) }}€</p>
                 <form method="POST" action="{{ route('buidar.carro') }}">
                     @csrf
                     <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded mt-4">
-                        Buidar el carro
+                        {{ __('Buidar el carro') }}
                     </button>
                 </form>
+                <div class="mt-4 flex space-x-4">
+                    <form method="POST" action="{{ route('comprar.carro', ['metode' => 'bizum']) }}">
+                        @csrf
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                            {{ __('Comprar amb Bizum') }}
+                        </button>
+                    </form>
+                    <form method="POST" action="{{ route('comprar.carro', ['metode' => 'targeta']) }}">
+                        @csrf
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                            {{ __('Comprar amb Targeta') }}
+                        </button>
+                    </form>
+                    <form method="POST" action="{{ route('comprar.carro', ['metode' => 'paypal']) }}">
+                        @csrf
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                            {{ __('Comprar amb PayPal') }}
+                        </button>
+                    </form>
+                </div>
             @endif
         @endif
     </div>

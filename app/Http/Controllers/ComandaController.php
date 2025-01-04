@@ -8,59 +8,18 @@ use Illuminate\Http\Request;
 
 class ComandaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
-    }
+        // Obté l'usuari autenticat
+        $usuari = auth()->user();
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+        // Obté totes les comandes de l'usuari amb els productes i el seu pivot
+        $comandes = Comanda::where('usuari_id', $usuari->id)
+            ->with('productes') // Carrega la relació amb els productes
+            ->with('pagament')  // Carrega la relació amb els pagaments
+            ->get();
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(comanda $comanda)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(comanda $comanda)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, comanda $comanda)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(comanda $comanda)
-    {
-        //
+        // Retorna la vista amb les comandes
+        return view('comandes', compact('comandes'));
     }
 }

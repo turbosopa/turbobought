@@ -27,10 +27,22 @@
                         </a>
                         
                         <div class="flex space-x-4">
-                            <a href="{{ route('dashboard') }}" class="hover:text-gray-400">
-                                {{__('Login')}}
+                            <a href="{{ route('comandes') }}" class="hover:text-gray-400">
+                                {{__('Comandes')}}
                             </a>
                         </div>
+                        @if (Auth::user()->admin)
+                        <!-- Només visible per a admins -->
+                            <a  href="{{ route('productes') }}" class="hover:text-gray-400">
+                                {{__('Administrar productes')}}
+                            </a>
+                        @endif
+                        @if (Auth::user()->admin)
+                        <!-- Només visible per a admins -->
+                            <a  href="{{ route('categories') }}" class="hover:text-gray-400">
+                                {{__('Administrar categories')}}
+                            </a>
+                        @endif
                     </div>
                 </div>
             </nav>
