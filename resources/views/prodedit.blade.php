@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="max-w-4xl mx-auto mt-10 mb-20">
-        <h1 class="text-3xl font-bold mb-6">{{ __('Editar Producte') }}</h1>
+        <h1 class="text-3xl font-bold mb-6">{{ __('Editar producte') }}</h1>
 
         <!-- Missatges d'error -->
         @if ($errors->any())
@@ -27,7 +27,7 @@
 
             <!-- Preu -->
             <div class="mb-4">
-                <label for="preu" class="block text-gray-700 font-bold">{{ __('Preu (€):') }}</label>
+                <label for="preu" class="block text-gray-700 font-bold">{{ __('Preu') }} (€):</label>
                 <input type="number" id="preu" name="preu" step="0.01" min="0"
                        value="{{ old('preu', $producte->preu) }}" 
                        class="w-full border rounded px-3 py-2">
@@ -62,7 +62,7 @@
             <!-- Botó Guardar -->
             <div>
                 <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-                    {{ __('Guardar Canvis') }}
+                    {{ __('Guardar canvis') }}
                 </button>
             </div>
         </form>

@@ -1,5 +1,5 @@
 <x-app-layout>
-    <h1 class="text-2xl font-bold mb-6">{{ __('LLista de Productes') }}</h1>
+    <h1 class="text-2xl font-bold mb-6">{{ __('LLista de productes') }}</h1>
 
     @if($productes->isEmpty())
         <p class="text-gray-500">{{ __('No hi ha productes disponibles.') }}</p>
@@ -34,7 +34,7 @@
     <!-- Botó per afegir producte -->
     <div class="mt-6">
         <a href="{{ route('producte.create') }}" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
-            {{ __('Afegir Producte Nou') }}
+            {{ __('Afegir producte nou') }}
         </a>
     </div>
 </x-app-layout>

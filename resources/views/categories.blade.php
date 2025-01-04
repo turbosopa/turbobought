@@ -1,5 +1,5 @@
 <x-app-layout>
-    <h1 class="text-2xl font-bold mb-6">{{ __('Llista de Categories') }}</h1>
+    <h1 class="text-2xl font-bold mb-6">{{ __('Llista de categories') }}</h1>
 
     @if($categories->isEmpty())
         <p class="text-gray-500">{{ __('No hi ha categories disponibles.') }}</p>
@@ -32,7 +32,7 @@
     <!-- Botó per afegir nova categoria -->
     <div class="mt-6">
         <a href="{{ route('categoria.create') }}" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
-            {{ __('Afegir Categoria') }}
+            {{ __('Afegir categoria') }}
         </a>
     </div>
 </x-app-layout>

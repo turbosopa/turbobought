@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="max-w-4xl mx-auto mt-10 mb-20">
-        <h1 class="text-3xl font-bold mb-6">{{ __('Afegir Categoria Nova') }}</h1>
+        <h1 class="text-3xl font-bold mb-6">{{ __('Afegir categoria nova') }}</h1>
 
         <!-- Missatges d'error -->
         @if ($errors->any())
@@ -34,7 +34,7 @@
             <!-- Botó Crear -->
             <div>
                 <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-                    {{ __('Crear Categoria') }}
+                    {{ __('Crear categoria') }}
                 </button>
             </div>
         </form>

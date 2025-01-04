@@ -29,7 +29,7 @@
       <div class="section">
           <h4 class="text-lg font-semibold mb-4">{{__('Segueix-nos')}}</h4>
           <div class="flex space-x-4">
-              <a href="https://www.instagram.com/smsalvi17/" class="hover:underline">{{__('Instagram')}}</a>
+              <a href="https://www.instagram.com/smsalvi17/" class="hover:underline">Instagram</a>
           </div>
       </div>
   </div>

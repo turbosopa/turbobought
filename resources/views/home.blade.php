@@ -108,7 +108,7 @@
             @endif
 
             <!-- Carro -->
-            <h2 class="text-2xl font-bold my-4">Carro</h2>
+            <h2 class="text-2xl font-bold my-4">{{ __('Carro') }}</h2>
             
             <ul>
                 @php
@@ -141,19 +141,19 @@
                     <form method="POST" action="{{ route('comprar.carro', ['metode' => 'bizum']) }}">
                         @csrf
                         <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-                            {{ __('Comprar amb Bizum') }}
+                            {{ __('Comprar amb') }} Bizum
                         </button>
                     </form>
                     <form method="POST" action="{{ route('comprar.carro', ['metode' => 'targeta']) }}">
                         @csrf
                         <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-                            {{ __('Comprar amb Targeta') }}
+                            {{ __('Comprar amb targeta') }}
                         </button>
                     </form>
                     <form method="POST" action="{{ route('comprar.carro', ['metode' => 'paypal']) }}">
                         @csrf
                         <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-                            {{ __('Comprar amb PayPal') }}
+                            {{ __('Comprar amb') }} PayPal
                         </button>
                     </form>
                 </div>

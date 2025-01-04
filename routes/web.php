@@ -6,11 +6,17 @@ use App\Http\Controllers\CategoriaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarritoController;
 use App\Http\Controllers\ComandaController;
+use App\Http\Middleware\Idioma;
 
 Route::get('/comandes', [ComandaController::class, 'index'])
     ->middleware('auth')
     ->name('comandes');
 
+Route::get('/lang/{idioma}', [App\Http\Controllers\LocalizationController::class, 'index'])
+    ->where('idioma', 'ca|en|es')
+    ->middleware(Idioma::class);
+
+    
 Route::get('/administrar/productes', [ProducteController::class, 'llistar'])->middleware(['auth'])->name('productes');
 Route::get('/producte/{producte}/edit', [ProducteController::class, 'edit'])->middleware(['auth'])->name('producte.edit');
 Route::delete('/producte/{producte}', [ProducteController::class, 'destroy'])->middleware(['auth'])->name('producte.destroy');
