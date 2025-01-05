@@ -17,8 +17,8 @@ class Idioma
     public function handle(Request $request, Closure $next): Response
     {
         
-        if (session()->has('idioma')) {  // si hi ha idioma al session 
-            App::setLocale(session()->get('idioma'));  // establir-lo com a idioma         de la petició actual
+        if (session()->has('idioma')) {
+            App::setLocale(session()->get('idioma'));
         }
         return $next($request);
     }
